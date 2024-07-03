@@ -4,6 +4,7 @@ export const Server = {
 		mocha: "https://api-mocha-4.celenium.io/v1",
 		arabica: "https://api-arabica-11.celenium.io/v1",
 		dev: "https://api-dev.celenium.io/v1",
+		private: "http://host.docker.internal:9876/v1",
 	},
 	WSS: {
 		mainnet: "wss://api.celenium.io/v1/ws",
@@ -14,7 +15,7 @@ export const Server = {
 	BLOBSTREAM: {
 		mainnet: "https://api-blobstream.celenium.io/v1",
 		testnet: "https://api-blobstream-testnet.celenium.io/v1",
-	}
+	},
 }
 
 export const useServerURL = () => {
@@ -36,8 +37,14 @@ export const useServerURL = () => {
 		case "dev.celenium.io":
 			return Server.API.dev
 
+		case "localhost":
+			return Server.API.private
+
+		case "127.0.0.1":
+			return Server.API.private
+
 		default:
-			return Server.API.dev
+			return Server.API.private
 	}
 }
 

@@ -96,6 +96,9 @@ export const getNetworkName = () => {
 		case "localhost":
 			return "Local"
 
+		case "127.0.0.1":
+			return "Local"
+
 		default:
 			return "Unknown"
 	}
