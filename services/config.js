@@ -4,13 +4,14 @@ export const Server = {
 		mocha: "https://api-mocha-4.celenium.io/v1",
 		arabica: "https://api-arabica-11.celenium.io/v1",
 		dev: "https://api-dev.celenium.io/v1",
-		private: "http://host.docker.internal:9876/v1",
+		private: "http://127.0.0.1:9876/v1",
 	},
 	WSS: {
 		mainnet: "wss://api.celenium.io/v1/ws",
 		mocha: "wss://api-mocha-4.celenium.io/v1/ws",
 		arabica: "wss://api-arabica-11.celenium.io/v1/ws",
 		dev: "wss://api-dev.celenium.io/v1/ws",
+		private: "ws://127.0.0.1:9876/v1/ws",
 	},
 	BLOBSTREAM: {
 		mainnet: "https://api-blobstream.celenium.io/v1",
@@ -68,7 +69,7 @@ export const useSocketURL = () => {
 			return Server.WSS.dev
 
 		default:
-			return Server.WSS.dev
+			return Server.WSS.private
 	}
 }
 
